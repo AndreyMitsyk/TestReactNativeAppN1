@@ -13,15 +13,11 @@ import {
   Button
 } from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+const instructions =
+  'Press Ctrl+R to reload,\n' +
+  'Shift+F10 or shake for dev menu';
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
@@ -29,7 +25,7 @@ export default class App extends Component<Props> {
           Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit App.js.
+          To get started, edit App.windows.js
         </Text>
         <Button
           onPress={this.onPressLearnMore}
@@ -43,7 +39,7 @@ export default class App extends Component<Props> {
       </View>
     );
   }
-
+  
   onPressLearnMore() {
     console.log("Error will be thrown");
     throw new Error("Test error");
@@ -58,7 +54,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   welcome: {
-    fontSize: 25,
+    fontSize: 20,
     textAlign: 'center',
     margin: 10,
   },
