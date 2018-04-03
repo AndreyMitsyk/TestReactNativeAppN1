@@ -10,3 +10,13 @@ it('renders correctly', () => {
     <App />
   );
 });
+
+it('throw error', () => {
+  const tree = renderer.create(
+    <App />
+  );
+
+  expect(() => {
+    tree.find(Button).first().props().onPress();
+  }).toThrow();
+});
