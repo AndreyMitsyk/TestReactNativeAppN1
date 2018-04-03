@@ -9,7 +9,8 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
 
 const instructions = Platform.select({
@@ -28,13 +29,24 @@ export default class App extends Component<Props> {
           Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit App.js!
+          To get started, edit App.js.
         </Text>
+        <Button
+          onPress={this.onPressLearnMore}
+          title="Crash"
+          color="#841584"
+          accessibilityLabel="Crash app"
+        />
         <Text style={styles.instructions}>
           {instructions}
         </Text>
       </View>
     );
+  }
+
+  onPressLearnMore() {
+    console.log("Error will be thrown");
+    throw new Error("Test error");
   }
 }
 
