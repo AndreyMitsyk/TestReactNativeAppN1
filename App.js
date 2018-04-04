@@ -12,6 +12,7 @@ import {
   View,
   Button
 } from 'react-native';
+import CodePush from "react-native-code-push";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -21,12 +22,13 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+
+class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to Sample App!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit App.js.
@@ -68,3 +70,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+App = CodePush(App);
+
+export default App;
