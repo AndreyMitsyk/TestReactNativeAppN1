@@ -8,6 +8,7 @@ project.ext.react = [
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
+apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -70,6 +71,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-code-push')
     compile project(':appcenter-push')
     compile project(':appcenter-crashes')
     compile project(':appcenter-analytics')
@@ -78,6 +80,7 @@ dependencies {
     compile "com.android.support:appcompat-v7:25.4.0"
     compile "com.facebook.react:react-native:+"  // From node_modules
 
+    androidTestCompile('com.microsoft.appcenter:espresso-test-extension:1.2')
     androidTestCompile 'com.android.support:support-annotations:25.4.0';
     androidTestCompile 'com.android.support.test:runner:1.0.0';
     androidTestCompile 'com.android.support.test:rules:1.0.0';
