@@ -27,13 +27,16 @@ export default class App extends Component<{}> {
           To get started, edit App.js.
         </Text>
         <Button
-          onPress={this.onPressLearnMore}
+          onPress={this.onPressCrashApp}
           title="Crash"
           color="#841584"
           accessibilityLabel="CrashApp"
         />
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+        />
         <Button
-          onPress={this.onPressLearnMore}
+          onPress={this.onPressUpdate}
           title="Update"
           color="#841584"
           accessibilityLabel="Update"
@@ -46,14 +49,14 @@ export default class App extends Component<{}> {
   }
 
 
-  onButtonPress() {
+  onPressUpdate() {
       codePush.sync({
           updateDialog: true,
           installMode: codePush.InstallMode.IMMEDIATE
       });
   }
 
-  onPressLearnMore() {
+  onPressCrashApp() {
     console.log("Error will be thrown");
     throw new Error("Test error");
   }
