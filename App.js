@@ -7,6 +7,7 @@ import {
   Button,
   TextInput
 } from 'react-native';
+import codePush from "react-native-code-push";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -31,11 +32,25 @@ export default class App extends Component<{}> {
           color="#841584"
           accessibilityLabel="CrashApp"
         />
+        <Button
+          onPress={this.onPressLearnMore}
+          title="Update"
+          color="#841584"
+          accessibilityLabel="Update"
+        />
         <Text style={styles.instructions}>
           {instructions}
         </Text>
       </View>
     );
+  }
+
+
+  onButtonPress() {
+      codePush.sync({
+          updateDialog: true,
+          installMode: codePush.InstallMode.IMMEDIATE
+      });
   }
 
   onPressLearnMore() {
