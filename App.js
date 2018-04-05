@@ -1,18 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
   Text,
   View,
-  Button
+  Button,
+  TextInput
 } from 'react-native';
-import CodePush from "react-native-code-push";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -21,9 +15,7 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-
-class App extends Component<Props> {
+export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
@@ -70,7 +62,3 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-
-App = CodePush(App);
-
-export default App;
