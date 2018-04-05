@@ -8,6 +8,7 @@ import {
   TextInput
 } from 'react-native';
 import codePush from "react-native-code-push";
+import Analytics from 'appcenter-analytics';
 
 export default class App extends Component<{}> {
   render() {
@@ -41,6 +42,8 @@ export default class App extends Component<{}> {
 
 
   onPressUpdate() {
+    Analytics.trackEvent('Update button clicked');
+
       codePush.sync({
           updateDialog: true,
           installMode: codePush.InstallMode.IMMEDIATE
